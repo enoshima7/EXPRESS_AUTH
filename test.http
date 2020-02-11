@@ -1,0 +1,24 @@
+@uri = http://localhost:3000/api
+@json = Content-Type: application/json
+###
+GET {{uri}}/users
+###
+POST  {{uri}}/register
+{{json}}
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+###
+POST {{uri}}/login
+{{json}}
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+
+###
+GET {{uri}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTQyNmFmMmVlZDQxNDRjYmExODkyZGMiLCJpYXQiOjE1ODE0MTE5MjF9.mTp-r6PrIybCHsvs7AjX9kqYK4x9leerLlCEQxMYcag
